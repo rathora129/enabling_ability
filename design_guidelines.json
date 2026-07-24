@@ -1,0 +1,196 @@
+{
+  "project_name": "Enabling Ability - Premium Website",
+  "theme": "light",
+  "typography": {
+    "headings": {
+      "family": "Cabinet Grotesk",
+      "fallback": "sans-serif",
+      "style": "Premium, Grotesque, high-impact"
+    },
+    "body": {
+      "family": "Manrope",
+      "fallback": "sans-serif",
+      "style": "Clean, highly readable, modern geometric"
+    },
+    "weights": {
+      "light": "300",
+      "regular": "400",
+      "medium": "500",
+      "bold": "700",
+      "black": "900"
+    },
+    "hierarchy": {
+      "h1": "text-5xl md:text-6xl lg:text-7xl tracking-tighter leading-none font-black",
+      "h2": "text-4xl md:text-5xl tracking-tight leading-tight font-bold",
+      "h3": "text-2xl md:text-3xl tracking-tight leading-snug font-bold",
+      "h4": "text-lg md:text-xl tracking-tight font-medium",
+      "body": "text-base md:text-lg leading-relaxed font-regular",
+      "overline": "text-xs tracking-[0.2em] uppercase font-bold text-primary"
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary": "#E65C00",
+      "primary_hover": "#CC5200",
+      "secondary": "#0A2B1E",
+      "background": "#FDFDFD",
+      "cards": "#F4F5F4",
+      "accent": "#A8D0B3",
+      "text_main": "#051A12",
+      "text_muted": "#4A5F55",
+      "white": "#FFFFFF",
+      "border": "#E2E8E4"
+    },
+    "usage": {
+      "buttons": "bg-primary text-white hover:bg-primary_hover transition-colors",
+      "secondary_buttons": "bg-secondary text-white hover:bg-secondary/90 transition-colors",
+      "hero_overlay": "bg-gradient-to-r from-secondary/90 via-secondary/50 to-transparent",
+      "section_alternate": "bg-cards",
+      "glass": "bg-white/70 backdrop-blur-xl border border-white/40 shadow-sm"
+    }
+  },
+  "visual_enhancers": {
+    "shadows": {
+      "card": "shadow-[0_8px_30px_rgb(0,0,0,0.04)]",
+      "card_hover": "shadow-[0_20px_40px_rgb(0,0,0,0.08)]",
+      "button": "shadow-[0_4px_14px_0_rgb(230,92,0,0.39)]"
+    },
+    "border_radius": {
+      "small": "rounded-lg",
+      "medium": "rounded-2xl",
+      "large": "rounded-[2rem]",
+      "pill": "rounded-full"
+    },
+    "textures": {
+      "noise": "Apply a very subtle 2% opacity noise overlay over solid background sections (like the Secondary Dark Green sections) to add a tactile, premium feel."
+    }
+  },
+  "grids_and_layouts": {
+    "container": "max-w-7xl mx-auto px-6 md:px-12 lg:px-24",
+    "section_spacing": "py-24 md:py-32",
+    "bento_grid": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6",
+    "asymmetry": "Avoid perfect centering for large content blocks. Use 5-column vs 7-column splits in a 12-column grid for visual tension."
+  },
+  "components": [
+    {
+      "name": "Navigation",
+      "description": "Sticky Glassmorphism Nav. Logo left, Links center, CTA right. Use Framer Motion to hide on scroll down, reveal on scroll up.",
+      "classes": "fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-white/20 transition-all duration-300"
+    },
+    {
+      "name": "Kinetic Hero",
+      "description": "80vh+ height. Background image with gradient overlay. H1 uses line-by-line reveal via Framer Motion overflow-hidden spans. Large Primary CTA, Secondary Call Now button. Floating Trust Badges overlaid on bottom right using subtle parallax.",
+      "classes": "relative w-full h-[85vh] flex items-center justify-start overflow-hidden"
+    },
+    {
+      "name": "Trust Marquee",
+      "description": "Slow, elegant, editorial marquee using react-fast-marquee. Very light gray background, dark green text. Content: Fully Insured • Professional Team • Reliable Service • Affordable Pricing."
+    },
+    {
+      "name": "About Section (Manifesto)",
+      "description": "Split layout. Left: Sticky 'Numbered Manifesto' chapters. Right: Scrolling text and animated Framer Motion counters (500+ customers, 10+ years). Uses large images framed in pill or arched window shapes."
+    },
+    {
+      "name": "Services Grid",
+      "description": "Dense Bento-style grid for 19 services. Cards are Very Light Gray, on hover slightly lift (-translate-y-1) and reveal a Soft Green bottom border. High-end Lucide icons in Primary Orange."
+    },
+    {
+      "name": "Why Choose Us & How It Works",
+      "description": "4-step layout using connected horizontal/vertical lines. Cards use a subtle Neumorphic inner shadow and Soft Green accents."
+    },
+    {
+      "name": "Service Areas",
+      "description": "Visual Australia Map (SVG or high-res image) with floating marker pins. Grid of cards below: Residential, Commercial, NDIS, Aged Care, Real Estate, Body Corporate."
+    },
+    {
+      "name": "Gallery & Before/After",
+      "description": "Masonry layout for the gallery with a smooth Lightbox. Custom Framer Motion slider for the Before/After interactive comparison (drag to reveal)."
+    },
+    {
+      "name": "Testimonials",
+      "description": "Luxurious slider. Large typography, 5-star icons in Primary Orange. Background can be Dark Green to break the visual pacing."
+    },
+    {
+      "name": "Floating Action Buttons",
+      "description": "Bottom right corner. WhatsApp icon (Green), Phone (Orange). Add an animated ping effect to the WhatsApp button to attract attention."
+    }
+  ],
+  "motion": {
+    "scrolling": "Lenis for smooth momentum scrolling. This is MANDATORY for the premium feel.",
+    "scroll_reveals": "Framer Motion 'whileInView'. Use { y: 40, opacity: 0 } to { y: 0, opacity: 1 } with a spring transition (stiffness: 100, damping: 20).",
+    "hero_text_reveal": "Split text into lines. Wrap each line in a <span className='overflow-hidden'>. Animate the inner text block from { y: '100%' } to { y: 0 } with a stagger.",
+    "micro_interactions": "All buttons must scale down { scale: 0.95 } on tap. Cards lift { y: -5 } on hover with increased shadow."
+  },
+  "accessibility": {
+    "contrast": "Ensure white text on primary orange meets 3:1 for large text. If not, darken the orange slightly for text, or use it only for large elements.",
+    "focus": "focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+    "reduced_motion": "Wrap major animations in a useReducedMotion check from framer-motion."
+  },
+  "libraries": [
+    "framer-motion (for scroll reveals, kinetic text, complex interactions)",
+    "lucide-react (for crisp, consistent icons)",
+    "react-fast-marquee (for editorial trust badges)",
+    "clsx and tailwind-merge (standard Shadcn utility)",
+    "@radix-ui/react-accordion (for FAQ)",
+    "lenis (or @studio-freight/lenis for smooth momentum scrolling)",
+    "embla-carousel-react (for testimonials/gallery)"
+  ],
+  "media_and_image_urls": [
+    {
+      "category": "Hero Background",
+      "url": "https://images.unsplash.com/photo-1782939355849-4a748ada9c84?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzl8MHwxfHNlYXJjaHw0fHxwcmVtaXVtJTIwbGFuZHNjYXBpbmclMjBnYXJkZW4lMjBzdW5zZXR8ZW58MHx8fHwxNzg0OTIzNjAzfDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Spacious premium house with vibrant green lawn",
+      "usage": "Use as full-screen background for Hero, with a dark green to transparent gradient overlay to ensure text legibility."
+    },
+    {
+      "category": "About Section / Team",
+      "url": "https://images.pexels.com/photos/5163429/pexels-photo-5163429.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Professional landscaper working on premium lawn",
+      "usage": "Place in the About section inside an arched or pill-shaped container to break the grid."
+    },
+    {
+      "category": "Gallery Image 1",
+      "url": "https://images.pexels.com/photos/4079768/pexels-photo-4079768.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Gardener trimming grass in scenic park setting",
+      "usage": "Use in masonry gallery or as a feature image for the 'Commercial' services card."
+    },
+    {
+      "category": "Service Areas / Real Estate",
+      "url": "https://images.pexels.com/photos/37064587/pexels-photo-37064587.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Modern home exterior with lush landscaping",
+      "usage": "Use in the Service Areas section to represent Residential or Real Estate."
+    },
+    {
+      "category": "Testimonials Background",
+      "url": "https://images.unsplash.com/photo-1629575063988-881596e38d31?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzl8MHwxfHNlYXJjaHwxfHxwcmVtaXVtJTIwbGFuZHNjYXBpbmclMjBnYXJkZW4lMjBzdW5zZXR8ZW58MHx8fHwxNzg0OTIzNjAzfDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Green grass field with trees",
+      "usage": "Use with heavy blur and dark overlay as the background for the testimonials section."
+    }
+  ],
+  "instructions_to_main_agent": [
+    "1. FRAMEWORK: Use React, Tailwind CSS, and Framer Motion. Ensure the app runs strictly on the client side for this single-page site.",
+    "2. SMOOTH SCROLLING: Wrap the main application in Lenis to enable premium momentum scrolling.",
+    "3. HERO ANIMATION: Implement the kinetic text reveal. Create a custom component that takes text, splits it by space/line, and animates it up using framer-motion.",
+    "4. WHATSAPP LOGIC: The contact form must not rely on a backend API. Construct a wa.me link with the form data (Name, Phone, Service, Date, Message) and use window.open to redirect the user to WhatsApp on submit.",
+    "5. FILE EXTENSION: Use `.js` or `.jsx` for all component files. Do NOT use `.tsx` or TypeScript syntax.",
+    "6. SPACING: Be excessively generous with whitespace. Use py-24 and py-32 for main sections.",
+    "7. COMPONENTS: Use raw HTML/Tailwind for structural layout to maintain creative freedom (asymmetry). Use Shadcn UI primitive logic for Accordions (FAQ), Inputs (Contact), and Dialogs (Gallery Lightbox).",
+    "8. ICONS: Use lucide-react. Standardize the stroke width to 1.5 for a premium, delicate look.",
+    "9. DATA-TESTID: Ensure every interactive element (buttons, form inputs, accordion triggers) has a data-testid attribute per the rules."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts. Use asymmetry to create visual tension.",
+    "Create depth through layered design elements with z-index hierarchy and glass-morphism effects (12-24px blur).",
+    "You MUST NOT apply universal transition (e.g., transition: all). Always add transitions for specific properties to avoid breaking Framer Motion transforms.",
+    "You MUST NOT center align the app container (.App { text-align: center; }). It disrupts reading flow.",
+    "Always use modern button styles (pill-shaped or sharp) with interaction animations & color relevant to the app style.",
+    "NEVER use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 etc. for icons. Use Lucide icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Missing categories or images must be handled gracefully without using generic placeholder text (via.placeholder.com). Use the provided image URLs.",
+    "Prioritize using pre-existing components from src/components/ui. Custom logic should be built to match existing styles.",
+    "Use 'sonner' for toast notifications."
+  ]
+}
