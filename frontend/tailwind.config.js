@@ -7,14 +7,21 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        heading: ['"Cabinet Grotesk"', '"Manrope"', 'sans-serif'],
+        sans: ['"Manrope"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)'
+        sm: 'calc(var(--radius) - 4px)',
+        '4xl': '2rem',
+        '5xl': '2.75rem',
       },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        cards: '#F4F5F4',
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))'
@@ -46,35 +53,33 @@ module.exports = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        chart: {
-          '1': 'hsl(var(--chart-1))',
-          '2': 'hsl(var(--chart-2))',
-          '3': 'hsl(var(--chart-3))',
-          '4': 'hsl(var(--chart-4))',
-          '5': 'hsl(var(--chart-5))'
-        }
       },
       keyframes: {
         'accordion-down': {
-          from: {
-            height: '0'
-          },
-          to: {
-            height: 'var(--radix-accordion-content-height)'
-          }
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' }
         },
         'accordion-up': {
-          from: {
-            height: 'var(--radix-accordion-content-height)'
-          },
-          to: {
-            height: '0'
-          }
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' }
+        },
+        'float-slow': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-14px)' }
+        },
+        'ping-slow': {
+          '75%, 100%': { transform: 'scale(1.9)', opacity: '0' }
+        },
+        'shimmer': {
+          '100%': { transform: 'translateX(100%)' }
         }
       },
       animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out'
+        'accordion-down': 'accordion-down 0.25s ease-out',
+        'accordion-up': 'accordion-up 0.25s ease-out',
+        'float-slow': 'float-slow 6s ease-in-out infinite',
+        'ping-slow': 'ping-slow 2.2s cubic-bezier(0,0,0.2,1) infinite',
+        'shimmer': 'shimmer 1.6s infinite'
       }
     }
   },
