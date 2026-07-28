@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div className="relative min-h-screen bg-background text-foreground antialiased">
-      <Preloader />
+      {/* <Preloader /> */}
       <Navbar />
       <main>
         <Hero />
