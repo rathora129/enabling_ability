@@ -4,25 +4,42 @@
 
 @layer base {
     :root {
-        --background: 0 0% 99%;
-        --foreground: 157 68% 6%;
+        /* Ezy Mowing Brand Theme */
+
+        --background: 120 20% 99%;
+        --foreground: 137 29% 12%;
+
         --card: 0 0% 100%;
-        --card-foreground: 157 68% 6%;
+        --card-foreground: 137 29% 12%;
+
         --popover: 0 0% 100%;
-        --popover-foreground: 157 68% 6%;
-        --primary: 24 100% 45%;
+        --popover-foreground: 137 29% 12%;
+
+        /* Ezy Mowing Green #4BAE3C */
+        --primary: 113 49% 46%;
         --primary-foreground: 0 0% 100%;
-        --secondary: 156 62% 10%;
+
+        /* Deep Forest #123D2A */
+        --secondary: 153 55% 15%;
         --secondary-foreground: 0 0% 100%;
-        --muted: 120 6% 96%;
-        --muted-foreground: 151 12% 33%;
-        --accent: 137 30% 74%;
-        --accent-foreground: 157 68% 6%;
+
+        /* Soft green backgrounds */
+        --muted: 110 25% 96%;
+        --muted-foreground: 135 15% 34%;
+
+        /* Logo Yellow #F2B51D */
+        --accent: 4 113 49% 46%;
+        --accent-foreground: 137 29% 12%;
+
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 0 0% 98%;
-        --border: 140 12% 90%;
-        --input: 140 12% 90%;
-        --ring: 24 100% 45%;
+
+        --border: 115 18% 89%;
+        --input: 115 18% 89%;
+
+        /* Green focus ring */
+        --ring: 113 49% 46%;
+
         --radius: 1rem;
     }
 }
@@ -31,48 +48,81 @@
     * {
         @apply border-border;
     }
+
     html {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         scroll-behavior: auto;
     }
+
     body {
         margin: 0;
         @apply bg-background text-foreground;
         font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
         font-feature-settings: "ss01", "cv01";
     }
+
     h1, h2, h3, h4, h5, h6, .font-heading {
         font-family: "Cabinet Grotesk", "Manrope", sans-serif;
     }
+
     ::selection {
-        background: hsl(24 100% 45%);
+        background: #4BAE3C;
         color: #fff;
     }
 }
 
 /* Lenis smooth scroll */
-html.lenis, html.lenis body { height: auto; }
-.lenis.lenis-smooth { scroll-behavior: auto !important; }
-.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-.lenis.lenis-stopped { overflow: hidden; }
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
 
 /* Custom scrollbar */
-::-webkit-scrollbar { width: 11px; }
-::-webkit-scrollbar-track { background: hsl(120 6% 96%); }
-::-webkit-scrollbar-thumb {
-    background: hsl(156 40% 22%);
-    border-radius: 999px;
-    border: 3px solid hsl(120 6% 96%);
+::-webkit-scrollbar {
+    width: 11px;
 }
-::-webkit-scrollbar-thumb:hover { background: hsl(24 100% 45%); }
+
+::-webkit-scrollbar-track {
+    background: #F3F8F1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2F7D32;
+    border-radius: 999px;
+    border: 3px solid #F3F8F1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4BAE3C;
+}
 
 @layer utilities {
-    .container-x { @apply max-w-7xl mx-auto px-6 md:px-12 lg:px-20; }
-    .text-balance { text-wrap: balance; }
+    .container-x {
+        @apply max-w-7xl mx-auto px-6 md:px-12 lg:px-20;
+    }
+
+    .text-balance {
+        text-wrap: balance;
+    }
 
     /* Subtle grain/noise overlay for dark sections */
-    .noise-overlay { position: relative; }
+    .noise-overlay {
+        position: relative;
+    }
+
     .noise-overlay::after {
         content: "";
         position: absolute;
@@ -89,23 +139,52 @@ html.lenis, html.lenis body { height: auto; }
         -webkit-backdrop-filter: blur(18px);
         border: 1px solid rgba(255, 255, 255, 0.5);
     }
+
     .glass-dark {
-        background: rgba(10, 43, 30, 0.55);
+        background: rgba(18, 61, 42, 0.58);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
         border: 1px solid rgba(255, 255, 255, 0.12);
     }
 
-    .shadow-card { box-shadow: 0 8px 30px rgb(0 0 0 / 0.05); }
-    .shadow-card-hover { box-shadow: 0 24px 50px rgb(6 26 18 / 0.12); }
-    .shadow-cta { box-shadow: 0 12px 30px 0 rgb(230 92 0 / 0.35); }
+    .shadow-card {
+        box-shadow: 0 8px 30px rgb(0 0 0 / 0.05);
+    }
 
-    .kinetic-line { display: block; overflow: hidden; }
-    .mask-fade-b { -webkit-mask-image: linear-gradient(to bottom, black 78%, transparent 100%); mask-image: linear-gradient(to bottom, black 78%, transparent 100%); }
+    .shadow-card-hover {
+        box-shadow: 0 24px 50px rgb(18 61 42 / 0.14);
+    }
+
+    /* Green CTA glow instead of orange */
+    .shadow-cta {
+        box-shadow: 0 12px 30px 0 rgb(75 174 60 / 0.32);
+    }
+
+    .kinetic-line {
+        display: block;
+        overflow: hidden;
+    }
+
+    .mask-fade-b {
+        -webkit-mask-image: linear-gradient(
+            to bottom,
+            black 78%,
+            transparent 100%
+        );
+        mask-image: linear-gradient(
+            to bottom,
+            black 78%,
+            transparent 100%
+        );
+    }
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+    }
 }
-
